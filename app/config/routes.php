@@ -17,7 +17,7 @@ return [
 	'post' => [
 		'controller' => 'main',
 		'action' => 'post'
-	]
+	],
 
 	//AdminController
 	'login' => [
@@ -40,5 +40,4 @@ return [
 		'controller' => 'admin',
 		'action' => 'update'
 	]
-]
-]
+];
