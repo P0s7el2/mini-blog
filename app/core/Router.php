@@ -61,25 +61,31 @@ class Router {
         //проверка на существование маршрута
         if ($this->match()) {
             //записываем путь в контроллер
-            $path = 'application\controllers\\'.ucfirst($this->params['controller']).'Controller';
+            $path = 'app\controllers\\'.ucfirst($this->params['controller']).'Controller';
             //проверка на существование класса
             if (class_exists($path)) {
                 //записываем путь в функцию
                 $action = $this->params['action'].'Action';
                 //проверяем существование 
+                echo 'path__' . $path . '<br>';
+                echo 'action__' . $action . '<br>';
+
                 if (method_exists($path, $action)) {
                     //создаем экз класса 
                     $controller = new $path($this->params);
                     //вызываем экшн
                     $controller->$action();
                 } else {
-                    View::errorCode(404);
+                    echo 'fail76';
+                    // View::errorCode(404);
                 }
             } else {
-                View::errorCode(404);
+                echo 'fail80';
+                // View::errorCode(404);
             }
         } else {
-            View::errorCode(404);
+            echo 'fail84';
+            // View::errorCode(404);
         }
     }
 }

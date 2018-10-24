@@ -1,16 +1,13 @@
-<?
+<?php
 
-namespace application\core;
-
-use application\core\View;
+namespace app\core;
 
 abstract class Controller {
 
-	public $route;
-
+    public $route;
 
 	public function __construct($route) {
-
+		$this->route = $route;
 	}
 
 }

@@ -1,13 +1,13 @@
-<?
+<?php
 
 return [
-	//MainCOntroller
+	//MainController
 	'' => [
 		'controller' => 'main',
 		'action' => 'index',
 	],
 	'about' => [
-		'controller' => 'main',
+		'controller' => 'about',
 		'action' => 'about'
 	],
 	'contact' => [
