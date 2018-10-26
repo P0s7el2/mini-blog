@@ -6,12 +6,12 @@ use app\core\Controller;
 
 Class AboutController extends Controller{
 	public function indexAction(){
-		echo 'aboutpage';
+		$this->view->render('about1');
 	}
 
 
 	public function aboutAction() {
-		echo 'about <br>';
+        $this->view->render('about2');
 	}
 }
 

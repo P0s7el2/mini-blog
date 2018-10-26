@@ -66,10 +66,7 @@ class Router {
             if (class_exists($path)) {
                 //записываем путь в функцию
                 $action = $this->params['action'].'Action';
-                //проверяем существование 
-                echo 'path__' . $path . '<br>';
-                echo 'action__' . $action . '<br>';
-
+                //проверяем существование
                 if (method_exists($path, $action)) {
                     //создаем экз класса 
                     $controller = new $path($this->params);

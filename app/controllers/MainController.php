@@ -6,7 +6,7 @@ use app\core\Controller;
 
 Class MainController extends Controller{
 	public function indexAction(){
-		echo 'mainpage';
+		$this->view->render('mainpage');
 	}
 
 }
