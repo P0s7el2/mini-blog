@@ -11,7 +11,8 @@ Class AboutController extends Controller{
 
 
 	public function aboutAction() {
-        $this->view->render('about2');
+        $vars = ["info" => "created by P0s7el2", "year" => "2018"];
+        $this->view->render('about2', $vars);
 	}
 }
 

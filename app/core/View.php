@@ -11,6 +11,7 @@ class View {
 	public $route;
 	public $layout = 'default';
 
+
 	public function __construct($route) {
 	    // записываем массив пути в свойство класса
 	    $this->route = $route;
@@ -20,12 +21,16 @@ class View {
 	}
 
 	public function render($title, $vars = []) {
+	    $path = 'app/views/'.$this->path.'.php';
+	    //распоковка переменных
+	    extract($vars);
 	    // включаем буферизацию вывода
 	    ob_start();
 	    //проверка на существование файла
-        if(file_exists('app/views/'.$this->path.'.php')){
+
+        if(file_exists($path)){
             //подключаем шаблон
-            require 'app/views/'.$this->path.'.php';
+            require $path;
             //получаем содержимое буфера и удалем
             $content = ob_get_clean();
             //подключаем лэйаут
@@ -35,4 +40,19 @@ class View {
         }
 	}
 
+    //выбрасывание кастомных страниц ошибок
+    public static function errorCode($code){
+	    http_response_code($code);
+	    $path = 'app/views/errors/'.$code.'.php';
+	    if(file_exists($path))
+	        require $path;
+
+	    exit;
+    }
+
+    //перенаправление
+    public static function redirect($url){
+        header('location: '.$url);
+        exit;
+    }
 }	

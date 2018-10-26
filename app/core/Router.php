@@ -73,16 +73,13 @@ class Router {
                     //вызываем экшн
                     $controller->$action();
                 } else {
-                    echo 'fail76';
-                    // View::errorCode(404);
+                    View::errorCode(404);
                 }
             } else {
-                echo 'fail80';
-                // View::errorCode(404);
+                View::errorCode(404);
             }
         } else {
-            echo 'fail84';
-            // View::errorCode(404);
+            View::errorCode(404);
         }
     }
 }

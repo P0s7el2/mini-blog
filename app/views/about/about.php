@@ -1,6 +1,5 @@
 
-<br>
-
 <p> about </p>
-
-<?php ?>
+<p>
+    <?php echo $info . "<br>" . $year;?>
+</p>
