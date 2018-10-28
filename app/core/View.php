@@ -54,4 +54,14 @@ class View {
         header('location: '.$url);
         exit;
     }
+
+    //функция вывода сообщений
+    public function message($status, $message){
+        exit(json_encode(['status' => $status, 'message' => $message]));
+    }
+
+    //перенаправление для js
+    public function location($url){
+        exit(json_encode(['url' => $url]));
+    }
 }	

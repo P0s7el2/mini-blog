@@ -13,6 +13,8 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="/public/scripts/jquery-3.3.1.js"></script>
+    <script src="/public/scripts/form.js"></script>
 </head>
 
 <body>

@@ -1,10 +1,10 @@
 <?php
 
-namespace application\core;
+namespace app\core;
 
-use application\lib\Db;
+use app\lib\Db;
 
-abstract class Model {
+abstract class Model   {
 	
 	public $db;
 	
