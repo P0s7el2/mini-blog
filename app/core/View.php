@@ -11,7 +11,6 @@ class View {
 	public $route;
 	public $layout = 'default';
 
-
 	public function __construct($route) {
 	    // записываем массив пути в свойство класса
 	    $this->route = $route;
