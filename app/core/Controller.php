@@ -28,13 +28,13 @@ abstract class Controller {
     }
 
     public function checkAcl(){
-        $this->acl = require 'app/acl/'.$this->route['controller'].'.php';
-        if($this->isAcl('all')){
-            return true;
-        } elseif (isset($_SESSION[admin][id]) and $this->isAcl('admin')){
-            return true;
-        }
-        return false;
+//        $this->acl = require 'app/acl/'.$this->route['controller'].'.php';
+//        if($this->isAcl('all')){
+//            return true;
+//        } elseif (isset($_SESSION[admin][id]) and $this->isAcl('admin')){
+//            return true;
+//        }
+        return true;
     }
 
     public function isAcl($key)

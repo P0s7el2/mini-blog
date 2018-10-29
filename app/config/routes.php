@@ -7,7 +7,7 @@ return [
 		'action' => 'index',
 	],
 	'about' => [
-		'controller' => 'about',
+		'controller' => 'main',
 		'action' => 'about'
 	],
 	'contact' => [
@@ -20,23 +20,23 @@ return [
 	],
 
 	//AdminController
-	'login' => [
+	'admin/login' => [
 		'controller' => 'admin',
 		'action' => 'login'
 	],
-	'logout' => [
+	'admin/logout' => [
 		'controller' => 'admin',
 		'action' => 'logout'
 	],
-	'add' => [
+	'admin/add' => [
 		'controller' => 'admin',
 		'action' => 'add'
 	],
-	'delete' => [
+	'admin/delete' => [
 		'controller' => 'admin',
 		'action' => 'delete'
 	],
-	'update' => [
+	'admin/supdate' => [
 		'controller' => 'admin',
 		'action' => 'update'
 	]

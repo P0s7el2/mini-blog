@@ -11,15 +11,15 @@ Class MainController extends Controller{
         $vars = [
             'news' => $result
         ];
-//        $db = new Db;
-//        $params = [
-//          'name' => 'т'
-//        ];
-//        $data = $db->column('SELECT name FROM users WHERE name = :name', $params);
-//        //debug($data);
+
 		$this->view->render('mainpage', $vars);
 
 	}
+
+    public function aboutAction() {
+        $vars = ["info" => "created by P0s7el2", "year" => "2018"];
+        $this->view->render('about2', $vars);
+    }
 
 }
 
