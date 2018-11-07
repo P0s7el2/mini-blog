@@ -1,8 +1,8 @@
-<?
+ <?
 
 return [
 	'all' => [
-		'login'
+        'login'
 	],
 	'authorize' => [
 		//
@@ -14,7 +14,8 @@ return [
 		'logout',
 		'add',
 		'edit',
-		'delete'
+		'delete',
+
 	],
 ];
 

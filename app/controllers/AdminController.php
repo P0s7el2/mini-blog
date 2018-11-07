@@ -9,6 +9,7 @@ Class AdminController extends Controller{
     public function __construct($route)
     {
         parent::__construct($route);
+        //$_SESSION['admin'] = 1;
     }
 
     public function loginAction(){
