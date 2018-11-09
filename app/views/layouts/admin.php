@@ -19,6 +19,11 @@
 
 <body>
 <script src="js/scripts.js"></script>
+<h2> Admin page </h2>
+<?php if ($this->route['action'] != 'login') : ?>
+<p><a href="/admin/logout">Выход</a>  <a href="/admin/posts">Посты</a>  <a href="/admin/add">Добавить</a></p>
+<?php endif; ?>
     <?php echo $content; ?>
+
 </body>
 </html>

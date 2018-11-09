@@ -30,14 +30,18 @@ return [
 	],
 	'admin/add' => [
 		'controller' => 'admin',
-		'action' => 'add'
+		'action' => 'addPost'
 	],
 	'admin/delete' => [
 		'controller' => 'admin',
-		'action' => 'delete'
+		'action' => 'deletePost'
 	],
-	'admin/supdate' => [
+	'admin/update' => [
 		'controller' => 'admin',
-		'action' => 'update'
-	]
+		'action' => 'updatePost'
+	],
+    'admin/posts' => [
+        'controller' => 'admin',
+        'action' => 'posts'
+    ],
 ];

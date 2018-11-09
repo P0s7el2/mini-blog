@@ -9,10 +9,14 @@ Class AdminController extends Controller{
     public function __construct($route)
     {
         parent::__construct($route);
+        $this->view->layout = 'admin';
         //$_SESSION['admin'] = 1;
     }
 
     public function loginAction(){
+        if(isset($_SESSION['admin'])) {
+            $this->view->redirect('/admin/add');
+        }
         if(!empty($_POST)){
             if(!$this->model->loginValidate($_POST)) {
                 $this->view->message('error', $this->model->error);
@@ -24,10 +28,23 @@ Class AdminController extends Controller{
     }
 
     public function addPostAction() {
+        if(!empty($_POST)){
+            if(!$this->model->postValidate($_POST, 'add')) {
+
+                $this->view->message('error', $this->model->error);
+            }
+            $this->view->message('ok', 'ok');
+        }
         $this->view->render('Добавить пост');
     }
 
-    public function editPostAction() {
+    public function updatePostAction() {
+        if(!empty($_POST)){
+            if(!$this->model->postValidate($_POST, 'update')) {
+                $this->view->message('error', $this->model->error);
+            }
+            $this->view->message('ok', 'ok');
+        }
         $this->view->render('Редактировать пост');
     }
 
@@ -36,7 +53,12 @@ Class AdminController extends Controller{
     }
 
     public function logoutAction() {
-        exit('выход');
+        unset($_SESSION['admin']);
+        $this->view->redirect('/admin/login');
+    }
+
+    public function postsAction() {
+        $this->view->render('Новости');
     }
 }
 

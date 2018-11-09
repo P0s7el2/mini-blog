@@ -1,4 +1,4 @@
- <?
+<?php
 
 return [
 	'all' => [
@@ -12,10 +12,10 @@ return [
 	],
 	'admin' =>[
 		'logout',
-		'add',
-		'edit',
-		'delete',
-
+		'addPost',
+		'updatePost',
+		'deletePost',
+        'posts'
 	],
 ];
 
