@@ -24,9 +24,10 @@ Class MainController extends Controller{
     public function contactAction(){
 	    if (!empty($_POST)){
 	        if(!$this->model->contactValidate($_POST)){
+
                 $this->view->message('error', $this->model->error);
             }
-            mail('romeo.com.ru@mail.ru', 'message_'.$_POST['text'].'_FROM_'.$_POST['name'] );
+            //mail('romeo.com.ru@mail.ru', 'сообщение из блога', 'message_'.$_POST['text'].'_FROM_'.$_POST['name'] );
 	        $this->view->message('success', 'успех');
         }
         $this->view->render('Contacts');

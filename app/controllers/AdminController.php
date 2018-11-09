@@ -14,7 +14,11 @@ Class AdminController extends Controller{
 
     public function loginAction(){
         if(!empty($_POST)){
-            //$this->view->location('/about');
+            if(!$this->model->loginValidate($_POST)) {
+                $this->view->message('error', $this->model->error);
+            }
+            $_SESSION['admin'] = true;
+            $this->view->location('add');
         }
         $this->view->render('Вход');
     }
